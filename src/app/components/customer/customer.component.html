@@ -1,0 +1,34 @@
+<div class="container">
+  <h2>Cadastro</h2>
+  <mat-form-field appearance="legacy">
+    <mat-label>Nome</mat-label>
+    <input matInput [(ngModel)]="customer.firstName" />
+  </mat-form-field>
+  <mat-form-field appearance="legacy">
+    <mat-label>Sobrenome</mat-label>
+    <input matInput [(ngModel)]="customer.lastName" />
+  </mat-form-field>
+  <mat-divider></mat-divider>
+  <div class="example-container">
+    <h4>Informações de Endereço</h4>
+    <mat-form-field appearance="legacy">
+      <mat-label>CEP</mat-label>
+      <input (blur)="onBlur()" matInput [(ngModel)]="customer.address.cep" />
+    </mat-form-field>
+    <mat-form-field appearance="legacy">
+      <mat-label>Rua</mat-label>
+      <input matInput [(ngModel)]="customer.address.street" />
+    </mat-form-field>
+    <mat-form-field appearance="legacy">
+      <mat-label>Bairro</mat-label>
+      <input matInput [(ngModel)]="customer.address.district" />
+    </mat-form-field>
+    <mat-form-field appearance="legacy">
+      <mat-label>Cidade</mat-label>
+      <input matInput [(ngModel)]="customer.address.city" />
+    </mat-form-field>
+    <br/>
+    <button mat-raised-button color="primary" (click)="save()">Salvar</button>
+  </div>
+  
+</div>

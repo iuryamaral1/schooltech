@@ -1,0 +1,11 @@
+<app-menu></app-menu>
+<mat-sidenav-container #sidenav style="height: 100%;">
+    <mat-sidenav mode="side" opened>
+        <mat-nav-list>
+            <a mat-list-item>Visão Geral</a>
+            <a mat-list-item>Perfil</a>
+            <a mat-list-item [routerLink]="['/home/customers']">Clientes</a>
+        </mat-nav-list>
+    </mat-sidenav>
+    <router-outlet></router-outlet>
+</mat-sidenav-container>

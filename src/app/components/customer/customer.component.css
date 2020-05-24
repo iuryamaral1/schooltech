@@ -1,0 +1,7 @@
+::ng-deep .mat-form-field, .mat-raised-button {
+    margin-right: 3%;
+}
+
+.container {
+    margin-left: 2%;
+}
