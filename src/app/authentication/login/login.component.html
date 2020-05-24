@@ -1,4 +1,5 @@
 <div class="body">
+
   <mat-card>
     <mat-card-title>Login</mat-card-title>
     <mat-card-content>
@@ -6,7 +7,7 @@
         <p>
           <mat-form-field>
             <input type="text" matInput placeholder="Username"
-             [(ngModel)]="loginRequest.usernameOrEmail"
+             [(ngModel)]="loginRequest.username"
              [ngModelOptions]="{standalone: true}" />
           </mat-form-field>
         </p>
@@ -25,7 +26,7 @@
         </p>
 
         <div class="button">
-            <button type="button" mat-raised-button>Register</button>
+            <button type="button" mat-raised-button routerLink="/register">Register</button>
             <button type="button" mat-raised-button (click)="login()">Login</button>
         </div>
       </form>

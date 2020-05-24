@@ -21,13 +21,18 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatSidenavModule } from "@angular/material/sidenav";
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
+import { MatGridListModule } from '@angular/material/grid-list';
 
-import { HomeComponent } from './home/home.component';
-import { MenuComponent } from './menu/menu.component';
+import { HomeComponent } from './components/home/home.component';
+import { MenuComponent } from './components/menu/menu.component';
+import { CustomerComponent } from './components/customer/customer.component';
 import { JwtHelperService } from '@auth0/angular-jwt';
-import { UserComponent } from './user/user.component';
+import { UserComponent } from './components/user/user.component';
 import { LoginComponent } from './authentication/login/login.component';
-
+import { AuthenticationService } from './_services/authentication.service';
+import { CepService } from './_services/cep.service';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +40,9 @@ import { LoginComponent } from './authentication/login/login.component';
     HomeComponent,
     MenuComponent,
     UserComponent,
-    LoginComponent
+    LoginComponent,
+    CustomerComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -56,9 +63,13 @@ import { LoginComponent } from './authentication/login/login.component';
     MatSidenavModule,
     MatListModule,
     MatIconModule,
+    MatGridListModule,
+    MatSnackBarModule,
     FormsModule,
   ],
-  providers: [JwtHelperService],
+  providers: [JwtHelperService,
+              AuthenticationService,
+              CepService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
