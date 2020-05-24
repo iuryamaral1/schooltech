@@ -1,3 +1,32 @@
-<p>
-  register works!
-</p>
+<mat-card>
+  <mat-card-title>Registre-se</mat-card-title>
+  <mat-card-content>
+    <form>
+      <p>
+        <mat-form-field>
+          <input type="text" matInput placeholder="Username"
+           [(ngModel)]="loginRequest.username"
+           [ngModelOptions]="{standalone: true}" />
+        </mat-form-field>
+      </p>
+
+      <p>
+        <mat-form-field>
+          <input type="password" matInput placeholder="Password"
+           [(ngModel)]="loginRequest.password" 
+           [ngModelOptions]="{standalone: true}" />
+        </mat-form-field>
+      </p>
+
+      <p *ngIf="error" class="error">
+        <span>{{ error }}</span>
+        <mat-icon (click)="hideErrorMessage()">close</mat-icon>
+      </p>
+
+      <div class="button">
+          <button type="button" mat-raised-button routerLink="/register">Register</button>
+          <button type="button" mat-raised-button (click)="login()">Login</button>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>

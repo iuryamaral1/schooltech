@@ -1,4 +1,5 @@
-import { City } from "./city.model";
+import { City } from './city.model';
+import { Uf } from './uf.model';
 
 export class Address {
 
@@ -6,5 +7,6 @@ export class Address {
     number: string;
     cep: string;
     district: string;
-    city: string;
+    city: City;
+    uf: Uf;
 }
